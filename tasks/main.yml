@@ -1,0 +1,29 @@
+# roles/rkhunter/tasks/main.yml
+---
+- name: install rkhunter
+  yum:
+    name: rkhunter
+    state: installed
+
+- name: setup rkhunter sysconfig
+  template:
+    dest: /etc/sysconfig/rkhunter
+    src: rkhunter.sysconfig.j2
+    owner: root
+    group: root
+    mode: 0640
+
+- name: setup rkhunter config
+  template:
+    dest: /etc/rkhunter.conf
+    src: rkhunter.conf.j2
+    owner: root
+    group: root
+    mode: 0640
+  notify:
+    - rkhunter update
+
+- name: create rkhunter database, if missing
+  command: rkhunter --propupd
+  args:
+    creates: /var/lib/rkhunter/db/rkhunter.dat

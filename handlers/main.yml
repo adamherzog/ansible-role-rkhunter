@@ -1,0 +1,4 @@
+# roles/rkhunter/handlers/main.yml
+---
+- name: rkhunter update
+  command: rkhunter --propupd

@@ -1,0 +1,9 @@
+# roles/rkhunter/defaults/main.yml
+---
+rkhunter_mailto: root@localhost
+rkhunter_diag_scan: 'no'
+
+rkhunter_allow_ssh_root_user: 'no'
+rkhunter_enable_tests: ALL
+rkhunter_disable_tests: suspscan hidden_procs deleted_files packet_cap_apps apps
+rkhunter_allowhiddenfiles: []
