@@ -5,5 +5,5 @@ rkhunter_diag_scan: 'no'
 
 rkhunter_allow_ssh_root_user: 'no'
 rkhunter_enable_tests: ALL
-rkhunter_disable_tests: suspscan hidden_procs deleted_files packet_cap_apps apps
+rkhunter_disable_tests: suspscan hidden_ports deleted_files packet_cap_apps apps ipc_shared_mem
 rkhunter_allowhiddenfiles: []
